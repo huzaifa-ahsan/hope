@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\FruitController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use PhpParser\Node\Stmt\Return_;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    
+Route::middleware('auth:api')->get('/user', function(Request $request) {
+ return $request->user();
 });
 
-//  hello fja klfjakl;j fklaj
+Route::get('/greeting', [FruitController::class, 'index']);

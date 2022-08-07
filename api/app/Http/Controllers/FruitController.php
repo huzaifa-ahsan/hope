@@ -15,7 +15,7 @@ class FruitController extends Controller
      */
     public function index()
     {
-        //
+        return Fruit::all();
     }
 
     /**
